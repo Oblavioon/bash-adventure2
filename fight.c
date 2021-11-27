@@ -62,7 +62,7 @@ void headShot(Player **ppj, Enemy **ppe, int choix){
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp) ;
-		printf("Vous subissez -%dHp de la part de %s.\n", );
+		printf("Vous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 		
 
@@ -86,9 +86,9 @@ void chestShot(Player **ppj, Enemy **ppe, int choix){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
 		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
-	else{
+	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);
-		printf("Vous subissez -%dHp de la part de %s.\n");
+		printf("Vous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 	
 
@@ -109,9 +109,9 @@ void limbShot(Player **ppj, Enemy **ppe, int choix){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
 		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
-	else{
+	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);
-		printf("Vous subissez -%dHp de la part de %s.\n");
+		printf("Vous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 		
 
