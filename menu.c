@@ -195,14 +195,20 @@ void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pp
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t|\t\t4.Fuir lamentablement ...\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\tEntrez votre choix : \t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t*************************************************\n" );
+    printf("\tEntrez votre choix : ");
     scanf("%d", &choix);
       switch (choix) // appel des différentes fonctions/procédures
       {              // en fonction du choix fait par l'utilisateur
         case 1:
           headShot(ppj, ppe, 3);
+          
+          if((*ppe)->hp<=0){
+            (*ppe)->y=26;
+            (*ppe)->x=51;
+            runGame(ppj, ppe, ppl, pple, 1);
+          }
           break;
         case 2:
           //chestShot(&ppj, &ppe, 2);
@@ -249,9 +255,9 @@ void menuCombatGobelin(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy 
       printf("\t|\t\t\t\t\t\t|\n" );
       printf("\t|\t\t4.Fuir lamentablement ...\t|\n");
       printf("\t|\t\t\t\t\t\t|\n" );
-      printf("\t|\t\tEntrez votre choix : \t\t|\n");
       printf("\t|\t\t\t\t\t\t|\n" );
       printf("\t*************************************************\n" );
+      printf("\tEntrez votre choix : ");
       scanf("%d", &choix);
         switch (choix) // appel des différentes fonctions/procédures
         {              // en fonction du choix fait par l'utilisateur
@@ -304,9 +310,9 @@ void menuCombatWorgen(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy *
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t|\t\t4.Fuir lamentablement ...\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\tEntrez votre choix : \t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t*************************************************\n" );
+     printf("\tEntrez votre choix : ");
     scanf("%d", &choix);
       switch (choix) // appel des différentes fonctions/procédures
       {              // en fonction du choix fait par l'utilisateur

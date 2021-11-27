@@ -54,11 +54,11 @@ void headShot(Player **ppj, Enemy **ppe, int choix){
 	}
 	if(attaque>=2&&attaque<=5){
 		(*ppe)->hp -=((*ppj)->dp) ;
-		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if(attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp) ;
@@ -80,11 +80,11 @@ void chestShot(Player **ppj, Enemy **ppe, int choix){
 	}
 	if (attaque>=2&&attaque<=3){
 		(*ppe)->hp -= ((*ppj)->dp);
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);
@@ -103,11 +103,11 @@ void limbShot(Player **ppj, Enemy **ppe, int choix){
 	}
 	if (attaque==2){
 		(*ppe)->hp -= ((*ppj)->dp);
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);

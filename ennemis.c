@@ -31,6 +31,7 @@ void initListeEnemy(ListeEnemy *ple){
 }
 
 void initEnemy(Enemy **ppe, ListeEnemy **ppl){
+    int caste;
 
     // Initialisation des stats basique
     (*ppe)->hp = 0;
@@ -41,6 +42,20 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
         // Stats
     (*ppe)->x = 0;
     (*ppe)->y = 0;
+
+    // Initialisation de la caste
+    caste=foncSemiAl(3+1);
+    while(caste==0){
+        caste=foncSemiAl(3+1);
+    }
+
+    if(caste==1){
+        casteGobelin(ppe);
+    }else if(caste==2){
+        casteOrc(ppe);
+    }else if(caste==3){
+        casteWorgen(ppe);
+    }
 
     // Initialisation pointeurs
         // pointeur Esuivant

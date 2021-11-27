@@ -27,7 +27,7 @@
 
 
 void pVerdoyante(Player **ppj, Enemy **ppe){
-
+//char map[y] [x];
   char map[25][50]; //, c[10]
   int  k=0;
   int i, j, x, y;
