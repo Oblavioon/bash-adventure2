@@ -39,6 +39,8 @@ void initListeEnemy(ListeEnemy *pl);
 
 void initEnemy(Enemy **ppe, ListeEnemy **ppl);
 
+int foncSemiAl(unsigned int aleatoire);
+
 void randEnemy(Enemy **ppe);
 
 void casteGobelin(Enemy **ppe);
@@ -46,6 +48,8 @@ void casteGobelin(Enemy **ppe);
 void casteOrc(Enemy **ppe);
 
 void casteWorgen(Enemy **ppe);
+
+void depEnemy(Enemy **ppe, int rpt);
 
 
 #endif

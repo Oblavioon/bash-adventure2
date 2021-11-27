@@ -121,6 +121,7 @@ void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
         printf("Entrée incorrecte.\n");
         printf("S'il vous plait entrez une valeur correcte.\n");
     }
+    system("clear");
   }
   while(1);
 }
@@ -129,7 +130,6 @@ void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 void menuAttack(Player **ppj, Enemy **ppe){
 
   int choix;
-
 
   printf("\t1. HeadShot,\n\t 2. ChestShot\n\t 3. LimbShot\n");
   printf("Choisissez votre option : ");
@@ -140,8 +140,6 @@ void menuAttack(Player **ppj, Enemy **ppe){
     scanf("%d", &choix);
     printf("\n");
   }
-
-
   switch(choix){
     // Partie pour le joueur
     case 1 :
@@ -172,6 +170,56 @@ void menuAttack(Player **ppj, Enemy **ppe){
       limbShot(ppj, ppe, choix);
       break;
   }
-
-
+}
+void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
+    int choix;
+    system("clear");
+    do{
+    //le tableau affiché dans le terminal
+    printf("\t\t   ▄▄█▀▀██                 \n");
+    printf("\t\t ▄█▀      ██  ▄▄▄ ▄▄    ▄▄▄▄    \n");
+    printf("\t\t ██        ██  ██▀ ▀▀ ▄█   ▀▀  \n");
+    printf("\t\t ▀█▄      ██   ██     ██       \n");
+    printf("\t\t   ▀▀█▄▄▄█▀   ▄██▄     ▀█▄▄▄▀ ");
+    printf("\n\t*************************************************\n");
+    printf("\t|\t\tMenu de combat  :\t\t|\n");
+    printf("\t*************************************************\n\t|");
+    printf("\t\t\t\t\t\t" );
+    printf("|\n\t|\t\tQue faire ? \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\t1.HeadShot  \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\t2.ChestShot  \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\t3.LimbShot \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\t4.Fuir lamentablement ...\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\tEntrez votre choix : \t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t*************************************************\n" );
+    scanf("%d", &choix);
+      switch (choix) // appel des différentes fonctions/procédures
+      {              // en fonction du choix fait par l'utilisateur
+        case 1:
+          headShot(ppj, ppe, 3);
+          break;
+        case 2:
+          //chestShot(&ppj, &ppe, 2);
+          break;
+        case 3:
+          //limbShot(&ppj, &ppe, 1);
+          break;
+        case 4:
+          ((*ppj)->x += 1);
+          ((*ppj)->y +=1);
+          runGame(ppj, ppe, ppl, pple, 1);
+          break;
+        default:
+          printf("Entrée incorrecte.\n");
+          printf("S'il vous plait entrez une valeur correcte.\n");
+      }
+      system("clear");
+    }
+    while(1);
 }

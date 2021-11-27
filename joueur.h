@@ -1,12 +1,13 @@
 #ifndef __JOUEUR_H__
 #define __JOUEUR_H__
 
-
+#include "ennemis.h"
 
 // Structure Player
 // Propre à chacun des joueurs...
 // À voir ce qui peut être attribué en fonction de chaque classe...
-typedef struct{
+typedef struct Player Player;
+struct Player{
     // Identité
     char nom[20];
     int sexe; // 1=G & 2=F
@@ -31,8 +32,8 @@ typedef struct{
                     // avec une comparaison des chaines de caractère (une fonction bien à elle)...
 
     // Pointeur pour liste
-    struct Player *psuivant;
-}Player;
+    Player *psuivant;
+};
 
 
 
@@ -46,7 +47,7 @@ typedef struct ListePlayer{
 
 
 // Prototypes
-void* malloc_protege(unsigned int s);
+void* malloc_protege(size_t s);
 
 void initListe(ListePlayer *pl);
 

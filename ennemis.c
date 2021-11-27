@@ -11,7 +11,7 @@
 #include "run.h"
 #include "save.h"
 
-int foncSemiAl(int aleatoire){
+int foncSemiAl(unsigned int aleatoire){
 
     srand((unsigned) time(NULL));
 
@@ -38,8 +38,9 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
     (*ppe)->xp = 0;
     (*ppe)->lvl = 0;
     (*ppe)->po = 0;
-        // Stats 
-
+        // Stats
+    (*ppe)->x = 0;
+    (*ppe)->y = 0;
 
     // Initialisation pointeurs
         // pointeur Esuivant
@@ -52,9 +53,9 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
 void randEnemy(Enemy **ppe){
     int choix=0;
 
-    choix = foncSemiAl(choix);
+    choix = foncSemiAl(3+1);
     while(choix==0){
-        choix = foncSemiAl(choix);
+        choix = foncSemiAl(3+1);
     }
 
     // Choix des castes de chacun des monstres
@@ -80,6 +81,9 @@ void casteGobelin(Enemy **ppe){
     (*ppe)->dp += 1;
     (*ppe)->xp += 5;
     (*ppe)->po += 2;
+    //position
+    (*ppe)->x = 0;
+    (*ppe)->y = 0;
         // Fixe le niveau du mob
     (*ppe)->lvl = 1;
 
@@ -97,6 +101,9 @@ void casteOrc(Enemy **ppe){
     (*ppe)->dp += 3;
     (*ppe)->xp += 10;
     (*ppe)->po += 4;
+    //position
+    (*ppe)->x = 10;
+    (*ppe)->y = 22;
         // Fixe le niveau du mob
     (*ppe)->lvl = 1;
 
@@ -114,9 +121,26 @@ void casteWorgen(Enemy **ppe){
     (*ppe)->dp += 6;
     (*ppe)->xp += 10;
     (*ppe)->po += 6;
+    //position
+    (*ppe)->x = 9;
+    (*ppe)->y = 13;
         // Fixe le niveau du mob
     (*ppe)->lvl = 3;
 
     // Rajout du valeur Zebapik (pt bonus)
     (*ppe)->zebapik = 2;
+}
+
+
+// Déplacement des personnages...
+void depEnemy(Enemy **ppe, int rpt){
+    if(rpt==0){
+        (*ppe)->x = foncSemiAl(23+1);
+        (*ppe)->y = foncSemiAl(9+1);
+    }
+    // Si l'on veut que les ennemis se déplace aussi -automatiquement-
+    // if(rpt!=0){
+        // (*ppe)->x++;
+        // (*ppe)->y+=foncSemiAl(1+1);
+    // }
 }

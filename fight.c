@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
 #include "joueur.h"
 #include "ennemis.h"
@@ -11,12 +13,13 @@
 
 
 
-void interPE(Player **ppj, Enemy **ppe){
-	int temp;
+void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
+	int temp=0;
 
-	temp = ((*ppj)->x + (*ppj)->y) - ((*ppe)->x + (*ppe)->y); 
+	temp = ((*ppj)->x + (*ppj)->y) - ((*ppe)->x + (*ppe)->y);
 
-	if(temp==0){
+	if(temp == 0){
+		menuCombatOrc(ppj, ppe, ppl, pple);
 		printf("\nUn ennemi.\n");
 	}
 
@@ -38,33 +41,68 @@ switch(attaque){
 // On va simplement jouer avec les structures pour l'instant...
 // Dans le cas où l'on aurait un headshot de la part de l'ennemis ou du joueur
 void headShot(Player **ppj, Enemy **ppe, int choix){
-	if(choix==1){
-		(*ppe)->hp -= 3;
-		printf("-3Hp avec HeadShot pour l'ennemi.\n");
-	}else{
-		(*ppj)->hp -= 3;
-		printf("Subi -3Hp avec HeadShot pour le hero.\n");
+	int attaque;
+
+	// On appelle la fonction "fonSemiAl(x)"
+	// elle nous permet de définir des dégâts d'attaque,
+	// Attaque Critique; Attaque Normale; Et une attaque où si le joueur rate l'adversaire lui
+	// inflige des coups... Propre à chacunes des attaques.
+	attaque = foncSemiAl(6+1);
+	if ( attaque == 6 ){
+		(*ppe)->hp -= ((*ppj)->dp)+2;
 	}
+	if ( attaque >= 2 && attaque <= 5 ){
+		(*ppe)->hp -=((*ppj)->dp) ;
+	}
+	if ( attaque == 1 ){
+		(*ppe)->hp -= ((*ppj)->dp)-1;
+	}
+	else{
+		(*ppj)->hp -= ((*ppe)->dp) ;
+	}
+		printf("-3Hp avec HeadShot pour l'ennemi.\n");
+
+		printf("Subi -3Hp avec HeadShot pour le hero.\n");
+
 
 }
 // Dans le cas où l'on aurait un chestshot de la part de l'ennemis ou du joueur
 void chestShot(Player **ppj, Enemy **ppe, int choix){
-	if(choix==2){
-		(*ppe)->hp -= 2;
-		printf("-3Hp avec ChestShot.\n");
-	}else{
-		(*ppj)->hp -= 2;
-		printf("Subi -3Hp avec ChestShot.\n");
+	int attaque;
+	attaque = foncSemiAl(4+1);
+	if (attaque==4){
+		(*ppe)->hp -= ((*ppj)->dp)+2;
 	}
+	if (attaque>=2&&attaque<=3){
+		(*ppe)->hp -= ((*ppj)->dp);
+	}
+	if (attaque==1){
+		(*ppe)->hp -= ((*ppj)->dp)-1;
+	}
+	else{
+		(*ppj)->hp -= ((*ppe)->dp);
+	}
+	printf("-3Hp avec ChestShot.\n");
+	printf("Subi -3Hp avec ChestShot.\n");
+
 }
 // Dnas le cas où l'on aurait un limbshot de la part de l'ennemis ou du joueur
 void limbShot(Player **ppj, Enemy **ppe, int choix){
-	if(choix ==3){
-		(*ppe)->hp -= 1;
-		printf("-3Hp avec LimbShot.\n");
-	}else{
-		(*ppj)->hp -= 1;
-		printf("Subi -3Hp avec LimbShot.\n");
+	int attaque;
+	attaque = foncSemiAl(3+1);
+	if (attaque==3){
+		(*ppe)->hp -= ((*ppj)->dp)+2;
 	}
-}
+	if (attaque==2){
+		(*ppe)->hp -= ((*ppj)->dp);
+	}
+	if (attaque==1){
+		(*ppe)->hp -= ((*ppj)->dp)-1;
+	}
+	else{
+		(*ppj)->hp -= ((*ppe)->dp);
+	}
+		printf("-3Hp avec LimbShot.\n");
+		printf("Subi -3Hp avec LimbShot.\n");
 
+}

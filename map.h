@@ -4,7 +4,7 @@
 // Prototypes
 //void deplacement(Player **ppj);
 
-void pVerdoyante(Player **ppj);
+void pVerdoyante(Player **ppj, Enemy **ppe);
 
 void affStats(Player **ppj);
 

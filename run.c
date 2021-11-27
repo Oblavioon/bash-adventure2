@@ -23,13 +23,17 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
 		firstparty++;
 	}
-	
+
+	// Initialisation des coordonées de/des ennemis
+  	depEnemy(ppe, 0);
 
 	while(1){
+		
+      pVerdoyante(ppj, ppe);
 
-      pVerdoyante(ppj);
-      interPE(ppj, ppe);
-      interactionPerso(ppj, ppl);
+      interPE(ppj, ppe, ppl, pple);
+
+      interactionPerso(ppj, ppe, ppl, pple);
 
 
       system("clear");

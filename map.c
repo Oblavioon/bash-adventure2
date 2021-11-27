@@ -26,7 +26,7 @@
 
 
 
-void pVerdoyante(Player **ppj){
+void pVerdoyante(Player **ppj, Enemy **ppe){
 
   char map[25][50]; //, c[10]
   int  k=0;
@@ -179,9 +179,15 @@ void pVerdoyante(Player **ppj){
         map[20][3]='M';
 
         //méchant niveau min
-        map[22][10]='m';
-        map[13][9]='m';
-        map[15][3]='m';
+        //(*ppe)->x = 22;
+        //(*ppe)->y = 10;
+        //map[(*ppe)->y][(*ppe)->x]='m';
+        //(*ppe)->x = 13;
+        //(*ppe)->y = 9;
+        //map[(*ppe)->y][(*ppe)->x]='m';
+        // (*ppe)->x = 3;
+        // (*ppe)->y = 15;
+        map[(*ppe)->y][(*ppe)->x]='m';
 
         //Mur d'enceinte
         map[23][19]='O';

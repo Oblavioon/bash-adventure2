@@ -11,7 +11,7 @@
 #include "save.h"
 
 // Fonction pour malloc protégée
-void* malloc_protege(unsigned int s){
+void* malloc_protege(size_t s){
     void * p;
     p=malloc(s);
 
@@ -53,7 +53,7 @@ void initPlayer(Player **ppj, ListePlayer **ppl){
         // stats avancées
     (*ppj)->zebapik = 0;
     (*ppj)->nitrile = 0;
-    
+
 
     // Initialisation des positions
     (*ppj)->x=1;
@@ -106,7 +106,7 @@ void casteG(Player **ppj){
     // Parce que l'on pourra ajouter différente stats avec
     // des items etc...
     (*ppj)->hp += 10;
-    (*ppj)->dp += 4;
+    (*ppj)->dp += 1;
     (*ppj)->xp += 2;
     (*ppj)->lvl += 0;
     (*ppj)->po += 0;
@@ -132,7 +132,7 @@ void casteV(Player **ppj){
     // Parce que l'on pourra ajouter différente stats avec
     // des items etc...
     (*ppj)->hp += 7;
-    (*ppj)->dp += 8;
+    (*ppj)->dp += 3;
     (*ppj)->xp += 1;
     (*ppj)->lvl += 0;
     (*ppj)->po += 1;

@@ -15,6 +15,8 @@ void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 
 void menuAttack(Player **ppj, Enemy **ppe);
 
+void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
+
 /*
 int menuCreationPerso();
 int menuNom(Player *pp);
