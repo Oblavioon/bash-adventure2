@@ -17,6 +17,9 @@ void menuAttack(Player **ppj, Enemy **ppe);
 
 void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 
+void menuCombatGobelin(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
+
+void menuCombatWorgen(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 /*
 int menuCreationPerso();
 int menuNom(Player *pp);
