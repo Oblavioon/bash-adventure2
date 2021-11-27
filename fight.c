@@ -48,21 +48,25 @@ void headShot(Player **ppj, Enemy **ppe, int choix){
 	// Attaque Critique; Attaque Normale; Et une attaque où si le joueur rate l'adversaire lui
 	// inflige des coups... Propre à chacunes des attaques.
 	attaque = foncSemiAl(6+1);
-	if ( attaque == 6 ){
+	if(attaque==6){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
-	if ( attaque >= 2 && attaque <= 5 ){
+	if(attaque>=2&&attaque<=5){
 		(*ppe)->hp -=((*ppj)->dp) ;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
-	if ( attaque == 1 ){
+	if(attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
-	else{
+	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp) ;
+		printf("Vous subissez -%dHp de la part de %s.\n", );
 	}
-		printf("-3Hp avec HeadShot pour l'ennemi.\n");
+		
 
-		printf("Subi -3Hp avec HeadShot pour le hero.\n");
+		
 
 
 }
@@ -72,18 +76,21 @@ void chestShot(Player **ppj, Enemy **ppe, int choix){
 	attaque = foncSemiAl(4+1);
 	if (attaque==4){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque>=2&&attaque<=3){
 		(*ppe)->hp -= ((*ppj)->dp);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	else{
 		(*ppj)->hp -= ((*ppe)->dp);
+		printf("Vous subissez -%dHp de la part de %s.\n");
 	}
-	printf("-3Hp avec ChestShot.\n");
-	printf("Subi -3Hp avec ChestShot.\n");
+	
 
 }
 // Dnas le cas où l'on aurait un limbshot de la part de l'ennemis ou du joueur
@@ -92,17 +99,20 @@ void limbShot(Player **ppj, Enemy **ppe, int choix){
 	attaque = foncSemiAl(3+1);
 	if (attaque==3){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque==2){
 		(*ppe)->hp -= ((*ppj)->dp);
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
+		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	else{
 		(*ppj)->hp -= ((*ppe)->dp);
+		printf("Vous subissez -%dHp de la part de %s.\n");
 	}
-		printf("-3Hp avec LimbShot.\n");
-		printf("Subi -3Hp avec LimbShot.\n");
+		
 
 }
