@@ -117,8 +117,8 @@ void casteOrc(Enemy **ppe){
     (*ppe)->xp += 10;
     (*ppe)->po += 4;
     //position
-    (*ppe)->x = 10;
-    (*ppe)->y = 22;
+    (*ppe)->x = 0;
+    (*ppe)->y = 0;
         // Fixe le niveau du mob
     (*ppe)->lvl = 1;
 
@@ -129,7 +129,7 @@ void casteOrc(Enemy **ppe){
 void casteWorgen(Enemy **ppe){
 
     // Nom de la classe/du mob
-    strcpy((*ppe)->n_caste, "Orgen");
+    strcpy((*ppe)->n_caste, "Worgen");
 
     // Rajout de données pour les stats
     (*ppe)->hp += 9;
@@ -137,8 +137,8 @@ void casteWorgen(Enemy **ppe){
     (*ppe)->xp += 10;
     (*ppe)->po += 6;
     //position
-    (*ppe)->x = 9;
-    (*ppe)->y = 13;
+    (*ppe)->x = 0;
+    (*ppe)->y = 0;
         // Fixe le niveau du mob
     (*ppe)->lvl = 3;
 

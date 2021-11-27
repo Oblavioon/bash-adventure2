@@ -6,6 +6,8 @@
 
 void pVerdoyante(Player **ppj, Enemy **ppe);
 
+void salleBoss(Player **ppj, Enemy **ppe);
+
 void affStats(Player **ppj);
 
 #endif

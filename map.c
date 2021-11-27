@@ -177,6 +177,9 @@ void pVerdoyante(Player **ppj, Enemy **ppe){
 
         //Méchant niveau max
         map[20][3]='M';
+        if((*ppj)->y==20 && (*ppj)->x==3){
+          salleBoss(ppj, ppe);
+        }
 
         //méchant niveau min
         //(*ppe)->x = 22;
@@ -313,6 +316,58 @@ void pVerdoyante(Player **ppj, Enemy **ppe){
 
   printf("\n");
 }
+
+
+void salleBoss(Player **ppj, Enemy **ppe){
+
+  char map[25][40];
+  int r = 12;
+  int i, j, k = 0, x = 20, y = 12;
+  for(i=0;i<25;i++){
+    for(j=0;j<40;j++){
+
+      if(sqrt((y-i)*(y-i) + (x-j)*(x-j)) <= r-1){
+        map[i][j] = ' ';
+      }
+      else if(sqrt((y-i)*(y-i) + (x-j)*(x-j)) <= r+1){
+        map[i][j] = '#';
+      }
+      else{
+        map[i][j] = ' ';
+      }
+      //Boss
+      map[12][20] = 'B';
+      //Méchant
+      map[10][18] = 'M';
+      map[14][18] = 'M';
+      map[10][22] = 'M';
+      map[14][22] = 'M';
+
+      //Téléporteur
+      map[23][20] = '@';
+    }
+  }
+  for(i=0;i<25;i++){
+    for(j=0;j<40;j++){
+
+      //if(map[i][j]=='#'){
+      printf("\033[1;31m%2c", map[i][j] );
+      //}
+      k++;
+
+      if(k%40 == 0){
+      printf("\n\033[0;m");
+      }
+    }
+  }
+}
+
+/*
+gcc -o main main.c -lm -g -Wall
+valgrind --leak-check=yes -s ./main
+*/
+
+
 
 // Fonction qui permettra l'affichage du perso et des options (déplacement, stats, etc...)
 void affStats(Player **ppj){
