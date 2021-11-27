@@ -205,8 +205,6 @@ void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pp
           headShot(ppj, ppe, 3);
           
           if((*ppe)->hp<=0){
-            (*ppe)->y=26;
-            (*ppe)->x=51;
             runGame(ppj, ppe, ppl, pple, 1);
           }
           break;
