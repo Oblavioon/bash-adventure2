@@ -103,7 +103,7 @@ void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple
         map[5][19]='*';
         map[5][18]='*';
         map[5][17]='*';
-
+        
         map[7][28]='*';
         map[7][27]='*';
         map[7][26]='*';

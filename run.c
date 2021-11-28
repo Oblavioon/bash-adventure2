@@ -16,7 +16,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 	void (*plateau[2])(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple) = {pVerdoyante, salleBoss};
 
 	intro(6);
-
+	
 	if(firstparty==0){
 		menuDemarrage(ppj, ppl);
 
@@ -27,7 +27,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
 		firstparty++;
 	}
-	
+
 	// Initialisation des coordonées de/des ennemis
   	depEnemy(ppe, 0);
 
