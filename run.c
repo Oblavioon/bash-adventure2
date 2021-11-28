@@ -16,7 +16,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 	void (*plateau[2])(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple) = {pVerdoyante, salleBoss};
 
 	intro(6);
-	
+
 	if(firstparty==0){
 		menuDemarrage(ppj, ppl);
 
@@ -37,7 +37,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 		// j'espère que vous allez comprendre facilement je viens de finir
 		// On a pas mal de warning avec le pointeur de tableau de fonction...
 		interPO(ppj, 10, 10, &indice);
-		plateau[indice];
+		plateau[i];
     	
 		// if((*ppj)->y!=10 && (*ppj)->x!=10){
 			// pVerdoyante(ppj, ppe);

@@ -42,7 +42,7 @@ void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 	int temp=0;
 
 	temp = ((*ppj)->x + (*ppj)->y) - ((*ppe)->x + (*ppe)->y);
-
+	
 	
 
 	if(temp == 0){
