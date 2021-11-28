@@ -318,7 +318,7 @@ void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple
 }
 
 
-void salleBoss(Player **ppj, Enemy **ppe){
+void salleBoss(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 
   char map[25][40];
   int r = 12;

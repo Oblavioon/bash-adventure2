@@ -11,7 +11,7 @@
 #include "save.h"
 
 void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, int firstparty){
-	int indice, i;
+	int indice=0, i;
 	// On déclare le tableau de fonction 
 	void (*plateau[2])(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple) = {pVerdoyante, salleBoss};
 
