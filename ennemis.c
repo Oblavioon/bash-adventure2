@@ -43,20 +43,6 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
     (*ppe)->x = 0;
     (*ppe)->y = 0;
 
-    // Initialisation de la caste
-    caste=foncSemiAl(3+1);
-    while(caste==0){
-        caste=foncSemiAl(3+1);
-    }
-
-    if(caste==1){
-        casteGobelin(ppe);
-    }else if(caste==2){
-        casteOrc(ppe);
-    }else if(caste==3){
-        casteWorgen(ppe);
-    }
-
     // Initialisation pointeurs
         // pointeur Esuivant
     (*ppe)->esuivant=NULL;
@@ -88,8 +74,9 @@ void randEnemy(Enemy **ppe){
 // À savoir que les Gobelins seront la caste la plus lvl chez les ennemis, représentés par un - ou + ou ♠︎
 void casteGobelin(Enemy **ppe){
 
-    // Nom de la classe/du mob
+    // Nom de la classe/du mob/ID
     strcpy((*ppe)->n_caste, "Gobelin");
+    (*ppe)->id=1;
 
     // Rajout de données pour les statistiques
     (*ppe)->hp += 2;
@@ -108,8 +95,9 @@ void casteGobelin(Enemy **ppe){
 //  À savoir que les Orcs sont la middle class des mob jute avant les Orgen et juste après les Gobelins, représentés par un + ou * ou ♣︎
 void casteOrc(Enemy **ppe){
 
-    // Nom de la  classe/du mob
+    // Nom de la  classe/du mob/ID
     strcpy((*ppe)->n_caste, "Orc");
+    (*ppe)->id=2;
 
     // Rajout de données pour les stats
     (*ppe)->hp += 4;
@@ -128,8 +116,9 @@ void casteOrc(Enemy **ppe){
 // À savoir que les Orgens sont la caste la plus haute parmis les mob "normaux"... représentés par un ^ ou $ ou ♥
 void casteWorgen(Enemy **ppe){
 
-    // Nom de la classe/du mob
+    // Nom de la classe/du mob/ID
     strcpy((*ppe)->n_caste, "Worgen");
+    (*ppe)->id=3;
 
     // Rajout de données pour les stats
     (*ppe)->hp += 9;

@@ -18,10 +18,12 @@ void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 
 	temp = ((*ppj)->x + (*ppj)->y) - ((*ppe)->x + (*ppe)->y);
 
-	// Y'a une erreur ici.
+
 	if(temp == 0){
-		menuCombatOrc(ppj, ppe, ppl, pple);
-		printf("\nUn ennemi.\n");
+		if((*ppe)->id==1) menuCombatGobelin(ppj, ppe, ppl, pple);
+		if((*ppe)->id==2) menuCombatOrc(ppj, ppe, ppl, pple);
+		if((*ppe)->id==3) menuCombatWorgen(ppj, ppe, ppl, pple);
+		// printf("\nUn ennemi.\n");
 	}
 
 }

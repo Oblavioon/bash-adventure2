@@ -9,6 +9,7 @@
 typedef struct Enemy{
     // Identité
     char n_caste[20];
+    int id;
 
     // Stats Enemy
     int hp; // Pt de vie
