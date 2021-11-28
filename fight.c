@@ -18,7 +18,7 @@ void affStatsComb(Player **ppj, Enemy **ppe){
   	if((*ppj)->nom[strlen((*ppj)->nom)-1]== '\n') (*ppj)->nom[strlen((*ppj)->nom)-1] = '\0';
 
 
-	printf("\t\t%s ~%s", (*ppj)->nom, (*ppj)->n_caste); // Joueur
+	printf("\t\t%s ~ %s", (*ppj)->nom, (*ppj)->n_caste); // Joueur
 	printf("\n");
 	printf("\t\tHp : %d", (*ppj)->hp); // Joueur
 	printf("\n");

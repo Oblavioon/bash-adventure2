@@ -8,6 +8,8 @@ void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple
 
 void salleBoss(Player **ppj, Enemy **ppe);
 
+void estaminet(Player **ppj, Enemy **ppe);
+
 int interPM();
 
 void interPO(Player **ppj, int x, int y, int *indice);

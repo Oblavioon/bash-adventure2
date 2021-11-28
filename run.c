@@ -15,6 +15,8 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 	// On déclare le tableau de fonction 
 	void (*plateau[2])(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple) = {pVerdoyante, salleBoss};
 
+	intro(6);
+
 	if(firstparty==0){
 		menuDemarrage(ppj, ppl);
 

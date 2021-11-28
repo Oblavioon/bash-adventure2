@@ -363,6 +363,124 @@ void salleBoss(Player **ppj, Enemy **ppe){
   }
 }
 
+
+void estaminet(Player **ppj, Enemy **ppe){
+
+char map[25][64];
+int  k;
+int i, j;
+k=0;
+
+
+printf("\033[1;34m▀██▀▀▀▀█           ▄                       ██                     ▄\n");
+printf(" ██  ▄     ▄▄▄▄  ▄██▄   ▄▄▄▄   ▄▄ ▄▄ ▄▄   ▄▄▄  ▄▄ ▄▄▄     ▄▄▄▄  ▄██▄\n");
+printf(" ██▀▀█    ██▄ ▀   ██   ▀▀ ▄██   ██ ██ ██   ██   ██  ██  ▄█▄▄▄██  ██\n");
+printf(" ██       ▄ ▀█▄▄  ██   ▄█▀ ██   ██ ██ ██   ██   ██  ██  ██       ██\n");
+printf("▄██▄▄▄▄▄█ █▀▄▄█▀  ▀█▄▀ ▀█▄▄▀█▀ ▄██ ██ ██▄ ▄██▄ ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▀\033[0;m\n");
+
+
+
+//printf("\tEstaminet...\n");
+// initialisation du tableau
+//printf("\033[1;33m");
+for(i=0; i<15; i++){
+  for(j=0; j<30; j++){
+
+    if( i == 0 || i == 14 ){
+      //printf("\033[1;35m");
+      map[i][j]='=';
+    }
+    else if( j == 0 || j == 29 ){
+      map[i][j]='|';
+    }
+
+    else{
+      //printf("\033[1;34m");
+      map[i][j]=' ';
+
+    }
+    //Fioles sur étagères
+    if(i == 1 && (j == 1 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 3 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 5 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 7 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 9 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 11 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 13 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 15 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 17 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 19 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 21 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 23 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 25 ))
+      map[i][j]='&';
+    if(i == 1 && (j == 27 ))
+      map[i][j]='&';
+
+    //Etagères
+    if(i == 2 && (j > 0 && j < 29))
+      map[i][j]='-';
+
+    //Camelot
+    if(i == 3 && j == 5)
+      map[i][j]='C';
+
+    //Barman
+    if(i == 3 && j == 25)
+      map[i][j]='B';
+
+    //Alchimiste
+    //Barman
+    if(i == 3 && j == 15)
+      map[i][j]='A';
+
+    //Comptoir
+    if(i == 4 && (j > 0 && j < 29))
+      map[i][j]='_';
+
+    //Héro
+    if(i == 6 && j == 15)
+      map[i][j]='H';
+
+    //Téléporteur
+    if(i == 13 && j == 15)
+      map[i][j]='@';
+
+  }
+}
+
+  // Affichage du tableau
+  for(i=0; i<15; i++){
+    for(j=0; j<30; j++){
+
+    //if(map[i][j]=='='){
+      //printf("%2c", map[i][j]);
+    //}
+
+      printf("%2c",map[i][j]);
+
+      k++;
+      if(k%30 == 0){
+        printf("\n");
+      }
+    }
+  }
+
+printf("\n");
+}
+
 /*
 gcc -o main main.c -lm -g -Wall
 valgrind --leak-check=yes -s ./main
