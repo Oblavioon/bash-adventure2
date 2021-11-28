@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "joueur.h"
 #include "ennemis.h"
@@ -177,9 +178,6 @@ void pVerdoyante(Player **ppj, Enemy **ppe){
 
         //Méchant niveau max
         map[20][3]='M';
-        if((*ppj)->y==20 && (*ppj)->x==3){
-          salleBoss(ppj, ppe);
-        }
 
         //méchant niveau min
         //(*ppe)->x = 22;
@@ -232,7 +230,8 @@ void pVerdoyante(Player **ppj, Enemy **ppe){
         map[21][12]='+';
         map[20][12]='+';
 
-
+        // Téléporteur
+        map[10][10] = '@';
 
 
       }
@@ -301,6 +300,10 @@ void pVerdoyante(Player **ppj, Enemy **ppe){
         if(map[i][j]=='+'){
           printf("\033[1;37m%2c",map[i][j]);
         }
+        // Téléporteur
+        if(map[i][j]=='@'){
+          printf("\033[1;37m%2c",map[i][j]);
+        }
 
 
         k++;
@@ -323,6 +326,7 @@ void salleBoss(Player **ppj, Enemy **ppe){
   char map[25][40];
   int r = 12;
   int i, j, k = 0, x = 20, y = 12;
+  
   for(i=0;i<25;i++){
     for(j=0;j<40;j++){
 

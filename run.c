@@ -28,15 +28,23 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
   	depEnemy(ppe, 0);
 
 	while(1){
+
+
 		
-      pVerdoyante(ppj, ppe);
+		pVerdoyante(ppj, ppe);
+    	
+		// if((*ppj)->y!=10 && (*ppj)->x!=10){
+			// pVerdoyante(ppj, ppe);
+		// }else if((*ppj)->y==10 && (*ppj)->x==10){
+        	// salleBoss(ppj, ppe);
+        // }
 
-      interPE(ppj, ppe, ppl, pple);
+      	interPE(ppj, ppe, ppl, pple);
 
-      interactionPerso(ppj, ppe, ppl, pple);
+      	interactionPerso(ppj, ppe, ppl, pple);
 
 
-      system("clear");
+      	system("clear");
     }
 
 }
