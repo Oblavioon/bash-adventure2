@@ -43,6 +43,8 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
     (*ppe)->x = 0;
     (*ppe)->y = 0;
 
+    randEnemy(ppe);
+
     // Initialisation pointeurs
         // pointeur Esuivant
     (*ppe)->esuivant=NULL;

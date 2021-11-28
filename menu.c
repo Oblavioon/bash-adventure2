@@ -219,9 +219,13 @@ void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple)
     do{
     //le tableau affiché dans le terminal
 
-    if((*ppe)->id==1) intro(3); // Pour les gobelins.
-    if((*ppe)->id==2) intro(4); // Pour les orcs.
-    if((*ppe)->id==3) intro(5); // Pour les worgens.
+    if((*ppe)->id==1){
+      intro(3); // Pour les gobelins.
+    }else if((*ppe)->id==2){ 
+      intro(4); // Pour les orcs.
+    }else if((*ppe)->id==3){
+      intro(5); // Pour les worgens.
+    }
 
     printf("\n\t*************************************************\n");
     printf("\t|\t\tMenu de combat  :\t\t|\n");
@@ -229,7 +233,7 @@ void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple)
     printf("\t\t\t\t\t\t" );
     printf("|\n\t|\t\tQue faire ? \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\t1.Guillotine Slash  \t\t\t|\n");
+    printf("\t|\t\t1.Guillotine Slash \t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t|\t\t2.Brise mur  \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );

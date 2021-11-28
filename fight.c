@@ -18,9 +18,11 @@ void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 
 	temp = ((*ppj)->x + (*ppj)->y) - ((*ppe)->x + (*ppe)->y);
 
+	
 
 	if(temp == 0){
-		if((*ppe)->id==1) menuCombat(ppj, ppe, ppl, pple);
+		printf("OK\n");
+		menuCombat(ppj, ppe, ppl, pple);
 		// printf("\nUn ennemi.\n");
 	}
 
@@ -51,19 +53,19 @@ void headShot(Player **ppj, Enemy **ppe, int choix){
 	attaque = foncSemiAl(6+1);
 	if(attaque==6){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
-		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("\tVous infligez, -%dHp %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if(attaque>=2&&attaque<=5){
 		(*ppe)->hp -=((*ppj)->dp) ;
-		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
+		printf("\tVous infligez, -%dHp %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if(attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
+		printf("\tVous infligez, -%dHp %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp) ;
-		printf("\tVous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
+		printf("\tVous subissez -%dHp de la part d'un %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 		
 

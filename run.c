@@ -39,7 +39,6 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
         // }
 
       	interPE(ppj, ppe, ppl, pple);
-
       	depPerso(ppj, ppe, ppl, pple);
 
 
