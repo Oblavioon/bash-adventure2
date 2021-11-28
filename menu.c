@@ -29,21 +29,21 @@ void menuDemarrage(Player **ppj, ListePlayer **ppl){
   // system("clear");
   //do{
   //le tableau affiché dans le terminal
-  printf("\n*************************************************\n");
-  printf("|\t\tMenu de démarrage :\t\t|\n");
-  printf("*************************************************\n|");
-  printf("\t\t\t\t\t\t" );
-  printf("|\n|\t1.Nouvelle partie \t\t\t|\n");
-  printf("|\t\t\t\t\t\t|\n" );
-  printf("|\t2.Charger partie enregistrée  \t\t|\n");
-  printf("|\t\t\t\t\t\t|\n" );
-  printf("|\t3.Supprimer une partie enregistrée  \t|\n");
-  printf("|\t\t\t\t\t\t|\n" );
-  printf("|\t4.Quitter \t\t\t\t|\n");
-  printf("|\t\t\t\t\t\t|\n" );
-  printf("|\tEntrez votre choix : \t\t\t|\n");
-  printf("|\t\t\t\t\t\t|\n" );
-  printf("*************************************************\n" );
+  printf("\n  \t\t*************************************************");
+  printf("\n  \t\t|\t\tMenu de démarrage :\t\t|");
+  printf("\n  \t\t*************************************************");
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t|\t1.Nouvelle partie \t\t\t|");
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t|\t2.Charger partie enregistrée  \t\t|");
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t|\t3.Supprimer une partie enregistrée  \t|");
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t|\t4.Quitter \t\t\t\t|");
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t|\t\t\t\t\t\t|" );
+  printf("\n  \t\t*************************************************" );
+  printf("\n  \t\tEntrez votre choix : ");
   scanf("%d", &choix);
     switch (choix) // appel des différentes fonctions/procédures
     {              // en fonction du choix fait par l'utilisateur
@@ -86,19 +86,19 @@ void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
   system("clear");
   do{
     //le tableau affiché dans le terminal
-    printf("\n*************************************************\n");
-    printf("|\t\tMenu du jeu :\t\t\t|\n");
-    printf("*************************************************\n|");
-    printf("\t\t\t\t\t\t" );
-    printf("|\n|\t1.Sauvegarder la partie \t\t|\n");
-    printf("|\t\t\t\t\t\t|\n" );
-    printf("|\t2.Reprendre partie \t\t\t|\n");
-    printf("|\t\t\t\t\t\t|\n" );
-    printf("|\t3.Quitter le jeu  \t\t\t|\n");
-    printf("|\t\t\t\t\t\t|\n" );
-    printf("|\tEntrez votre choix : \t\t\t|\n");
-    printf("|\t\t\t\t\t\t|\n" );
-    printf("*************************************************\n" );
+    printf("\n\t*************************************************\n");
+    printf("\t|\t\tMenu du jeu :\t\t\t|\n");
+    printf("\t*************************************************\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t1.Sauvegarder la partie \t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t2.Reprendre partie \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t3.Quitter le jeu  \t\t\t|\n");
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t|\t\t\t\t\t\t|\n" );
+    printf("\t*************************************************\n" );
+    printf("\tEntrez votre choix : ");
     scanf("%d", &choix);
     switch (choix) // appel des différentes fonctions/procédures
     {              // en fonction du choix fait par l'utilisateur

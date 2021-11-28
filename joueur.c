@@ -33,13 +33,15 @@ void initPlayer(Player **ppj, ListePlayer **ppl){
     int temp;
 
     // pj->nom = nom
-    printf("Entrez le nom de votre personnage: ");
+    printf("  \t\t*\n");
+    printf("  \t\tEntrez le nom de votre personnage: ");
     fgets((*ppj)->nom, 20, stdin);
 
     // pj->sexe = sexe
-    printf("Choisissez votre sexe.\n");
-    printf("1:Homme | 2:Femme\n");
-    printf("Choisir : ");
+    printf("  \t\t*-*\n");
+    printf("  \t\tChoisissez votre sexe.\n");
+    printf("  \t\t1:Homme | 2:Femme\n");
+    printf("  \t\tChoisir : ");
     scanf("%d", &temp);
     (*ppj)->sexe = temp;
 
@@ -73,8 +75,10 @@ void initPlayer(Player **ppj, ListePlayer **ppl){
 void initCaste(Player **ppj){
     int choix;
 
-    printf("Quelle caste/classe souhaitez avoir ?\n");
-    printf("1:Guerrier/Guerriere. | 2:Voleur/Voleuse.\n");
+    printf("  \t\t*-*-*\n");
+    printf("  \t\tQuelle caste/classe souhaitez avoir ?\n");
+    printf("  \t\t1:Guerrier/Guerriere. | 2:Voleur/Voleuse.\n");
+    printf("  \t\tChoisir :");
     scanf("%d", &choix);
 
 
