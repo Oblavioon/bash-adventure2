@@ -27,7 +27,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
 		firstparty++;
 	}
-
+	
 	// Initialisation des coordonées de/des ennemis
   	depEnemy(ppe, 0);
 
