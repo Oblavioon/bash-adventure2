@@ -4,6 +4,8 @@
 #include "ennemis.h"
 
 // Prototypes
+void affStatsComb(Player **ppj, Enemy **ppe);
+
 void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 
 void headShot(Player **ppj, Enemy **ppe, int choix);

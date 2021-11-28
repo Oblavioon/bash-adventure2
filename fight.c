@@ -12,6 +12,31 @@
 #include "save.h"
 
 
+// Affichage des stats du joueur et du monstre dans le menu de Combat
+void affStatsComb(Player **ppj, Enemy **ppe){
+	// On "nettoie" le buffer et la chaine de caractères "parasite"
+  	if((*ppj)->nom[strlen((*ppj)->nom)-1]== '\n') (*ppj)->nom[strlen((*ppj)->nom)-1] = '\0';
+
+
+	printf("\t\t%s ~%s", (*ppj)->nom, (*ppj)->n_caste); // Joueur
+	printf("\n");
+	printf("\t\tHp : %d", (*ppj)->hp); // Joueur
+	printf("\n");
+	printf("\t\tDp : %d", (*ppj)->dp); // Joueur
+
+	printf("\n");
+	printf("\t\t\t▀▄▀ ▄█▀\t\t");
+	printf("\n");
+
+	printf("\t\t\t\t%s ~ Monstre", (*ppe)->n_caste); // Monstre
+	printf("\n");
+	printf("\t\t\t\tHp : %d", (*ppe)->hp); // Monstre
+	printf("\n");
+	printf("\t\t\t\tDp : %d", (*ppe)->dp);	// Monstre
+	printf("\n");
+}
+
+
 // Interaction Joueur et Ennemis
 void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 	int temp=0;
@@ -79,19 +104,19 @@ void chestShot(Player **ppj, Enemy **ppe, int choix){
 	attaque = foncSemiAl(4+1);
 	if (attaque==4){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque>=2&&attaque<=3){
 		(*ppe)->hp -= ((*ppj)->dp);
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);
-		printf("Vous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
+		printf("\tVous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 	
 
@@ -102,19 +127,19 @@ void limbShot(Player **ppj, Enemy **ppe, int choix){
 	attaque = foncSemiAl(3+1);
 	if (attaque==3){
 		(*ppe)->hp -= ((*ppj)->dp)+2;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp+2, (*ppe)->n_caste);
 	}
 	if (attaque==2){
 		(*ppe)->hp -= ((*ppj)->dp);
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp, (*ppe)->n_caste);
 	}
 	if (attaque==1){
 		(*ppe)->hp -= ((*ppj)->dp)-1;
-		printf("Vous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
+		printf("\tVous infligez -%dHp a %s.\n", (*ppj)->dp-1, (*ppe)->n_caste);
 	}
 	if(attaque==0){
 		(*ppj)->hp -= ((*ppe)->dp);
-		printf("Vous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
+		printf("\tVous subissez -%dHp de la part de %s.\n", (*ppe)->dp, (*ppe)->n_caste);
 	}
 		
 

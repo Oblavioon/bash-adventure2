@@ -5,11 +5,13 @@
 
 //FILE* fopen(const char* nomDuFichier, const char* modeOuverture);
 //int fclose(FILE* pointeurSurFichier);
+void purgeSTDIN();
+
 void intro(unsigned int choix);
 
-void menuDemarrage(Player **ppj, ListePlayer **ppl);
+void confChoix();
 
-void purgeSTDIN();
+void menuDemarrage(Player **ppj, ListePlayer **ppl);
 
 void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 

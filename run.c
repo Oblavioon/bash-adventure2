@@ -11,6 +11,9 @@
 #include "save.h"
 
 void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, int firstparty){
+	int indice, i;
+	// On déclare le tableau de fonction 
+	void (*plateau[2])(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple) = {pVerdoyante, salleBoss};
 
 	if(firstparty==0){
 		menuDemarrage(ppj, ppl);
@@ -28,9 +31,11 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
 	while(1){
 
-
-		
-		pVerdoyante(ppj, ppe, ppl, pple);
+		// Regarde la fonction en faisant ctrl + clic droit
+		// j'espère que vous allez comprendre facilement je viens de finir
+		// On a pas mal de warning avec le pointeur de tableau de fonction...
+		interPO(ppj, 10, 10, &indice);
+		plateau[indice];
     	
 		// if((*ppj)->y!=10 && (*ppj)->x!=10){
 			// pVerdoyante(ppj, ppe);
@@ -46,6 +51,8 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
     }
 
 }
+
+
 
 void temps(){
 

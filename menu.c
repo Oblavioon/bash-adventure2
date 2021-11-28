@@ -57,6 +57,19 @@ void intro(unsigned int choix){
 
 }
 
+void confChoix(){
+  int i;
+
+  // Nous permet de valider réellement l'attaque du joueur
+  // (évite certains bug)... et rajoute une sécurité
+  // alternative au compteur....
+  printf("\n\tValidez votre choix (1) : ");
+  scanf("%d", &i);
+  while(i!=1){
+    printf("\n\tValidez votre choix (1) : ");
+    scanf("%d", &i);
+  }
+}
 
 
 
@@ -243,6 +256,7 @@ void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple)
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t*************************************************\n" );
+    affStatsComb(ppj, ppe);
     printf("\tEntrez votre choix : ");
     scanf("%d", &choix);
       switch (choix) // appel des différentes fonctions/procédures
@@ -250,31 +264,57 @@ void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple)
         case 1:
           headShot(ppj, ppe, 3);
           
-          for(i=0; i<40; i++);
+          confChoix();
 
           if((*ppe)->hp<=0){
+
+            // Si le joueur tue la monstre il recup ces ressources
+            (*ppj)->po+=(*ppe)->po;
+            (*ppj)->xp+=(*ppe)->xp;
+            (*ppj)->zebapik+=(*ppe)->zebapik;
+
+            // On initialise à nouveau le monstre
+            initEnemy(ppe, pple);
+
+            // On relance la partie
             runGame(ppj, ppe, ppl, pple, 1);
           }
           break;
         case 2:
           chestShot(ppj, ppe, 2);
 
-          for(i=0; i<40; i++);
+          confChoix();
 
           if((*ppe)->hp<=0){
+            // Si le joueur tue la monstre il recup ces ressources
+            (*ppj)->po+=(*ppe)->po;
+            (*ppj)->xp+=(*ppe)->xp;
+            (*ppj)->zebapik+=(*ppe)->zebapik;
+
+            // On initialise à nouveau le monstre
+            initEnemy(ppe, pple);
+
+            // On relance la partie
             runGame(ppj, ppe, ppl, pple, 1);
           }
-
           break;
         case 3:
           limbShot(ppj, ppe, 1);
 
-          for(i=0; i<40; i++);
+          confChoix();
 
           if((*ppe)->hp<=0){
+            // Si le joueur tue la monstre il recup ces ressources
+            (*ppj)->po+=(*ppe)->po;
+            (*ppj)->xp+=(*ppe)->xp;
+            (*ppj)->zebapik+=(*ppe)->zebapik;
+
+            // On initialise à nouveau le monstre
+            initEnemy(ppe, pple);
+
+            // On relance la partie
             runGame(ppj, ppe, ppl, pple, 1);
           }
-
           break;
         case 4:
           ((*ppj)->x += 1);
@@ -283,8 +323,8 @@ void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple)
 
           break;
         default:
-          printf("Entrée incorrecte.\n");
-          printf("S'il vous plait entrez une valeur correcte.\n");
+          printf("\tEntrée incorrecte.\n");
+          printf("\tS'il vous plait entrez une valeur correcte.\n");
           menuCombat(ppj, ppe, ppl, pple);
       }
       system("clear");

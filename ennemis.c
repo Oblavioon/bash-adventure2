@@ -30,7 +30,7 @@ void initListeEnemy(ListeEnemy *ple){
     ple->etete = NULL;
 }
 
-void initEnemy(Enemy **ppe, ListeEnemy **ppl){
+void initEnemy(Enemy **ppe, ListeEnemy **pple){
     int caste;
 
     // Initialisation des stats basique
@@ -49,7 +49,7 @@ void initEnemy(Enemy **ppe, ListeEnemy **ppl){
         // pointeur Esuivant
     (*ppe)->esuivant=NULL;
         // pointeur de liste
-    (*ppl)->etete=*ppe;
+    (*pple)->etete=*ppe;
 }
 
 

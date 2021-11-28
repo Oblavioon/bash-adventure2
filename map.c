@@ -24,9 +24,6 @@
 #define DEFAULT_COLOR "\033[0;m"
 
 
-
-
-
 void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 //char map[y] [x];
   char map[25][50]; //, c[10]
@@ -371,6 +368,43 @@ gcc -o main main.c -lm -g -Wall
 valgrind --leak-check=yes -s ./main
 */
 
+int interPM(){
+  int indice;
+
+  printf("Quelle map souhaitez-vous rejoindre ?\n");
+  printf("1.Prairie Verdoyante | 2.Salle du BOSS | 3.Shop/Autre\n");
+  printf("Choisir : ");
+  scanf("%d", &indice);
+
+  while(indice<1 || indice>3){
+    printf("Quelle map souhaitez-vous rejoindre ?\n");
+    printf("1.Prairie Verdoyante | 2.Salle du BOSS | 3.Shop/Autre\n");
+    printf("Choisir : ");
+    scanf("%d", &indice);
+  }
+
+  if(indice==1){
+    return 0;
+  }else if(indice==2){
+    return 1;
+  }else if(indice==3){
+    return 2;
+  }
+}
+
+// Fonction dédiée à l'interaction objet
+// on reprend le principe de celle interPE (interaction Perso Enemy).
+void interPO(Player **ppj, int x, int y, int *indice){
+  int temp=0;
+
+	temp = ((*ppj)->x + (*ppj)->y) - (x + y);
+
+  if(temp==0){
+    printf("OKtp\n");
+    *indice = interPM();
+  }
+}
+
 
 
 // Fonction qui permettra l'affichage du perso et des options (déplacement, stats, etc...)
@@ -395,7 +429,7 @@ void affStats(Player **ppj){
 
   printf("\033[1;33m  PO : %d;", (*ppj)->po); // Perso
 
-  printf("\t\t\t\t \033[1;33m Niveau : %d\n", (*ppj)->lvl); // Perso
+  printf("\t\t\t\t \033[1;33m Niveau : %d (%d)\n", (*ppj)->lvl, (*ppj)->xp); // Perso
 
   printf("\n");
 }
