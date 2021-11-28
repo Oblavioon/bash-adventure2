@@ -12,7 +12,7 @@
 #include "save.h"
 
 
-
+// Interaction Joueur et Ennemis
 void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 	int temp=0;
 
@@ -20,9 +20,7 @@ void interPE(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 
 
 	if(temp == 0){
-		if((*ppe)->id==1) menuCombatGobelin(ppj, ppe, ppl, pple);
-		if((*ppe)->id==2) menuCombatOrc(ppj, ppe, ppl, pple);
-		if((*ppe)->id==3) menuCombatWorgen(ppj, ppe, ppl, pple);
+		if((*ppe)->id==1) menuCombat(ppj, ppe, ppl, pple);
 		// printf("\nUn ennemi.\n");
 	}
 

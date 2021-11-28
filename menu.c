@@ -10,25 +10,64 @@
 #include "run.h"
 #include "save.h"
 
+// On utilise cette fonction pour purge le STDIN(...)
+void purgeSTDIN(){
+  char ch;
 
-void intro(){
+  while((ch=getchar())!= '\n' && ch!=EOF);
+}
+
+void intro(unsigned int choix){
   system("clear");
-  printf(" ▄▄▄▄▄▄▄ ▄▄▄     ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄\n");
-  printf("█       █   █   █       █   ▄  █ █       █      █       █       █   ▄  █ \n");
-  printf("█   ▄▄▄▄█   █   █    ▄▄▄█  █ █ █ █   ▄▄▄▄█  ▄   █▄     ▄█   ▄   █  █ █ █ \n");
-  printf("█  █  ▄▄█   █   █   █▄▄▄█   █▄▄█▄█  █  ▄▄█ █▄█  █ █   █ █  █ █  █   █▄▄█▄ \n");
-  printf("█  █ █  █   █▄▄▄█    ▄▄▄█    ▄▄  █  █ █  █      █ █   █ █  █▄█  █    ▄▄  █\n");
-  printf("█  █▄▄█ █       █   █▄▄▄█   █  █ █  █▄▄█ █  ▄   █ █   █ █       █   █  █ █\n");
-  printf("█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄▄▄▄▄▄█▄█ █▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄█  █▄█\n");
+
+  if(choix==0){
+    printf(" ▄▄▄▄▄▄▄ ▄▄▄     ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄\n");
+    printf("█       █   █   █       █   ▄  █ █       █      █       █       █   ▄  █ \n");
+    printf("█   ▄▄▄▄█   █   █    ▄▄▄█  █ █ █ █   ▄▄▄▄█  ▄   █▄     ▄█   ▄   █  █ █ █ \n");
+    printf("█  █  ▄▄█   █   █   █▄▄▄█   █▄▄█▄█  █  ▄▄█ █▄█  █ █   █ █  █ █  █   █▄▄█▄ \n");
+    printf("█  █ █  █   █▄▄▄█    ▄▄▄█    ▄▄  █  █ █  █      █ █   █ █  █▄█  █    ▄▄  █\n");
+    printf("█  █▄▄█ █       █   █▄▄▄█   █  █ █  █▄▄█ █  ▄   █ █   █ █       █   █  █ █\n");
+    printf("█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄▄▄▄▄▄█▄█ █▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄█  █▄█\n");
+  }
+
+  if(choix==3){
+    printf("      ▄▄█▀▀▀▄█          ▀██              ▀██   ██     \n");
+    printf("     ▄█▀     ▀    ▄▄▄    ██ ▄▄▄    ▄▄▄▄   ██  ▄▄▄  ▄▄ ▄▄▄   \n");
+    printf("     ██    ▄▄▄▄ ▄█  ▀█▄  ██▀  ██ ▄█▄▄▄██  ██   ██   ██  ██ \n");
+    printf("     ▀█▄    ██  ██   ██  ██    █ ██       ██   ██   ██  ██  \n");
+    printf("      ▀▀█▄▄▄▀█   ▀█▄▄█▀  ▀█▄▄▄▀   ▀█▄▄▄▀ ▄██▄ ▄██▄ ▄██▄ ██▄ \n");
+  }
+
+  if(choix==4){
+    printf("\t\t   ▄▄█▀▀██                 \n");
+    printf("\t\t ▄█▀      ██  ▄▄▄ ▄▄    ▄▄▄▄    \n");
+    printf("\t\t ██        ██  ██▀ ▀▀ ▄█   ▀▀  \n");
+    printf("\t\t ▀█▄      ██   ██     ██       \n");
+    printf("\t\t   ▀▀█▄▄▄█▀   ▄██▄     ▀█▄▄▄▀ ");
+  }
+
+  if(choix==5){
+    printf("    ▀██ ▀██▀  ▀█▀\n");
+    printf("     ▀█▄ ▀█▄  ▄▀    ▄▄▄   ▄▄▄ ▄▄    ▄▄▄ ▄   ▄▄▄▄  ▄▄ ▄▄▄\n");
+    printf("      ██  ██  █   ▄█  ▀█▄  ██▀ ▀▀  ██ ██  ▄█▄▄▄██  ██  ██\n");
+    printf("       ███ ███    ██   ██  ██       █▀▀   ██       ██  ██\n");
+    printf("        █   █      ▀█▄▄█▀ ▄██▄     ▀████▄  ▀█▄▄▄▀ ▄██▄ ██▄\n");
+    printf("                                   ▄█▄▄▄▄▀");
+  }
+
 }
 
 
+
+
+// Fonction pour le menu Démarrage
 void menuDemarrage(Player **ppj, ListePlayer **ppl){
 
   int choix;
   // system("clear");
   //do{
   //le tableau affiché dans le terminal
+  intro(0);
   printf("\n  \t\t*************************************************");
   printf("\n  \t\t|\t\tMenu de démarrage :\t\t|");
   printf("\n  \t\t*************************************************");
@@ -73,12 +112,12 @@ void menuDemarrage(Player **ppj, ListePlayer **ppl){
   system("clear");
 }
 
-void purgeSTDIN(){
-  char ch;
 
-  while((ch=getchar())!= '\n' && ch!=EOF);
-}
 
+
+// Fonction concernant le menu du jeu
+// lorsqu'en pleine partie l'on appuie sur "m"
+// l'on déclenche ce menu...
 void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
   // ListePlayer *pl = NULL;
   //pl = pl->prem_el;
@@ -127,11 +166,14 @@ void menu_jeu(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 }
 
 
+
+// Le menu des attaques du personnage ce déclenche
+// automatiquement lorsque le joueur intéragit avec 1 ennemi.
 void menuAttack(Player **ppj, Enemy **ppe){
 
-  int choix;
+  int choix; // On utilise choix pour définir les attaques qui vont suivre.
 
-  printf("\t1. HeadShot,\n\t 2. ChestShot\n\t 3. LimbShot\n");
+  printf("\t1. Guillotine Slash,\n\t 2. Brise mur,\n\t 3. Demembrement,\n");
   printf("Choisissez votre option : ");
   scanf("%d", &choix);
 
@@ -171,27 +213,27 @@ void menuAttack(Player **ppj, Enemy **ppe){
       break;
   }
 }
-void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
-    int choix;
+void menuCombat(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
+    int choix, i;
     system("clear");
     do{
     //le tableau affiché dans le terminal
-    printf("\t\t   ▄▄█▀▀██                 \n");
-    printf("\t\t ▄█▀      ██  ▄▄▄ ▄▄    ▄▄▄▄    \n");
-    printf("\t\t ██        ██  ██▀ ▀▀ ▄█   ▀▀  \n");
-    printf("\t\t ▀█▄      ██   ██     ██       \n");
-    printf("\t\t   ▀▀█▄▄▄█▀   ▄██▄     ▀█▄▄▄▀ ");
+
+    if((*ppe)->id==1) intro(3); // Pour les gobelins.
+    if((*ppe)->id==2) intro(4); // Pour les orcs.
+    if((*ppe)->id==3) intro(5); // Pour les worgens.
+
     printf("\n\t*************************************************\n");
     printf("\t|\t\tMenu de combat  :\t\t|\n");
     printf("\t*************************************************\n\t|");
     printf("\t\t\t\t\t\t" );
     printf("|\n\t|\t\tQue faire ? \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\t1.HeadShot  \t\t\t|\n");
+    printf("\t|\t\t1.Guillotine Slash  \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\t2.ChestShot  \t\t\t|\n");
+    printf("\t|\t\t2.Brise mur  \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
-    printf("\t|\t\t3.LimbShot \t\t\t|\n");
+    printf("\t|\t\t3.Demembrement \t\t\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
     printf("\t|\t\t4.Fuir lamentablement ...\t|\n");
     printf("\t|\t\t\t\t\t\t|\n" );
@@ -204,33 +246,64 @@ void menuCombatOrc(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pp
         case 1:
           headShot(ppj, ppe, 3);
           
+          for(i=0; i<40; i++);
+
           if((*ppe)->hp<=0){
             runGame(ppj, ppe, ppl, pple, 1);
           }
           break;
         case 2:
-          //chestShot(&ppj, &ppe, 2);
+          chestShot(ppj, ppe, 2);
+
+          for(i=0; i<40; i++);
+
+          if((*ppe)->hp<=0){
+            runGame(ppj, ppe, ppl, pple, 1);
+          }
+
           break;
         case 3:
-          //limbShot(&ppj, &ppe, 1);
+          limbShot(ppj, ppe, 1);
+
+          for(i=0; i<40; i++);
+
+          if((*ppe)->hp<=0){
+            runGame(ppj, ppe, ppl, pple, 1);
+          }
+
           break;
         case 4:
           ((*ppj)->x += 1);
           ((*ppj)->y +=1);
           runGame(ppj, ppe, ppl, pple, 1);
+
           break;
         default:
           printf("Entrée incorrecte.\n");
           printf("S'il vous plait entrez une valeur correcte.\n");
+          menuCombat(ppj, ppe, ppl, pple);
       }
       system("clear");
     }
     while(1);
 }
 
+
+
+
+
+
+
+
+
+/*
+
+J'ai mis en commentaire étant donné que finalement ça ne nous fait que des lignes en plus...
+on a pu utiliser correctement les "id" xD
+
 void menuCombatGobelin(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 
-      int choix;
+      int choix, i;
       system("clear");
       do{
       //le tableau affiché dans le terminal
@@ -260,22 +333,43 @@ void menuCombatGobelin(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy 
         switch (choix) // appel des différentes fonctions/procédures
         {              // en fonction du choix fait par l'utilisateur
           case 1:
-            //headShot(&ppj, &ppe, 3);
+            headShot(ppj, ppe, 3);
+          
+            for(i=0; i<40; i++);
+
+            if((*ppe)->hp<=0){
+              runGame(ppj, ppe, ppl, pple, 1);
+            }
             break;
           case 2:
-            //chestShot(&ppj, &ppe, 2);
+            chestShot(&ppj, &ppe, 2);
+
+            for(i=0; i<40; i++);
+
+            if((*ppe)->hp<=0){
+              runGame(ppj, ppe, ppl, pple, 1);
+            }
+
             break;
           case 3:
-            //limbShot(&ppj, &ppe, 1);
+            limbShot(&ppj, &ppe, 1);
+
+            for(i=0; i<40; i++);
+
+            if((*ppe)->hp<=0){
+              runGame(ppj, ppe, ppl, pple, 1);
+            }
+
             break;
           case 4:
-            //(*ppj->x += 1)
-            //(*ppj->y +=1)
-            //runGame(ppj, ppe, ppl, pple, 1);
+            (*ppj->x += 1)
+            (*ppj->y +=1)
+            runGame(ppj, ppe, ppl, pple, 1);
             break;
           default:
             printf("Entrée incorrecte.\n");
             printf("S'il vous plait entrez une valeur correcte.\n");
+            menuCombatGobelin()
         }
         system("clear");
       }
@@ -339,3 +433,4 @@ void menuCombatWorgen(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy *
 
 
 }
+*/

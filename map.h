@@ -4,7 +4,7 @@
 // Prototypes
 //void deplacement(Player **ppj);
 
-void pVerdoyante(Player **ppj, Enemy **ppe);
+void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 
 void salleBoss(Player **ppj, Enemy **ppe);
 

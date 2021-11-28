@@ -27,13 +27,13 @@
 
 
 
-void pVerdoyante(Player **ppj, Enemy **ppe){
+void pVerdoyante(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
 //char map[y] [x];
   char map[25][50]; //, c[10]
   int  k=0;
-  int i, j, x, y;
-  x = (*ppj)->x;
-  y = (*ppj)->y;
+  int i, j, x=(*ppj)->x, y=(*ppj)->y;
+  
+
   system("clear");
   printf("\n");
   // (*ppj)->n_map[50]="Prairie Verdoyante";

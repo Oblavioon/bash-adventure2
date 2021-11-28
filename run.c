@@ -13,7 +13,6 @@
 void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, int firstparty){
 
 	if(firstparty==0){
-		intro();
 		menuDemarrage(ppj, ppl);
 
 		initEnemy(ppe, pple);
@@ -31,7 +30,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
 
 		
-		pVerdoyante(ppj, ppe);
+		pVerdoyante(ppj, ppe, ppl, pple);
     	
 		// if((*ppj)->y!=10 && (*ppj)->x!=10){
 			// pVerdoyante(ppj, ppe);
@@ -41,7 +40,7 @@ void runGame(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple, in
 
       	interPE(ppj, ppe, ppl, pple);
 
-      	interactionPerso(ppj, ppe, ppl, pple);
+      	depPerso(ppj, ppe, ppl, pple);
 
 
       	system("clear");

@@ -59,6 +59,6 @@ void casteG(Player **ppj);
 
 void casteV(Player **ppj);
 
-int interactionPerso(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
+int depPerso(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple);
 
 #endif

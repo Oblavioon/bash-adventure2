@@ -149,7 +149,7 @@ void casteV(Player **ppj){
     strcpy((*ppj)->logo_caste, "V");
 }
 
-int interactionPerso(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
+int depPerso(Player **ppj, Enemy **ppe, ListePlayer **ppl, ListeEnemy **pple){
   char dep;
   printf("Deplacement : ");
   scanf("%c", &dep);
