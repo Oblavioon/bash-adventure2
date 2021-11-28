@@ -390,6 +390,7 @@ int interPM(){
   }else if(indice==3){
     return 2;
   }
+  return 0;
 }
 
 // Fonction dédiée à l'interaction objet
